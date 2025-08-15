@@ -1,0 +1,86 @@
+body {
+  font-family: 'Tahoma', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #111;
+  line-height: 1.7;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 4px solid #ddd;
+}
+
+header h1 {
+  font-size: 28px;
+  margin: 0;
+  color: #000;
+  display: inline-block;
+  background-color: #dcdcdc;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+header p {
+  margin: 8px 0 0 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.announcement {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+h2 {
+  font-size: 22px;
+  color: #000;
+  border-right: 6px solid #dcdcdc;
+  padding-right: 10px;
+  margin-top: 0;
+}
+
+ul {
+  padding-right: 20px;
+  margin-bottom: 15px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  color: #666;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.register-btn {
+  display:inline-block;
+  padding:12px 24px;
+  background-color:#4CAF50;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+  font-size:16px;
+  margin-top:15px;
+}
+.register-btn:hover{
+  background-color:#45a049;
+}
