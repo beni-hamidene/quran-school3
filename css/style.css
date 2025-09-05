@@ -1,9 +1,10 @@
-/* خلفية مع صورة القرآن */
+/* خلفية مسجد مع تأثير ثابت */
 body {
   margin: 0;
   font-family: "Cairo", sans-serif;
-  background: url('https://images.openai.com/blob/Db0s7nicu1mUUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw4qT_QvN3Avz_eKSDWt8gg1LPD1NDfKLyipLMv190oKK83PSc7xC3QyczXyL8z1LHd2dvdKKitIMs5SKwYA3MMpxw?width=1200&height=800&quality=80') 
-    no-repeat center center/cover;
+  background: url('https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=1600&q=80') 
+    no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
   text-align: center;
 }
@@ -32,8 +33,8 @@ header p {
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   color: #fff;
