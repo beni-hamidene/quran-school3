@@ -1,4 +1,4 @@
-/* ====== خلفية + طبقة ضباب خفيفة ثابتة ====== */
+/* ====== خلفية محسّنة وأخف ====== */
 html, body {
   height: 100%;
 }
@@ -7,83 +7,82 @@ body {
   font-family: Tahoma, Arial, sans-serif;
   color: #fff;
   background:
-    /* تدرّج خفيف كطبقة احتياطية لو فشلت الصورة */
     linear-gradient(135deg, #0e4b1f 0%, #0a2a4a 100%),
-    /* صورة خلفية من مصدر موثوق (Unsplash) */
-    url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80')
-    no-repeat center center fixed;
+    url('https://picsum.photos/1600/900?blur=2') no-repeat center center fixed;
   background-size: cover;
   position: relative;
-  line-height: 1.9;
+  line-height: 1.8;
 }
 
-/* ضباب بسيط فوق الخلفية (خارج المحتوى) */
+/* ضباب خفيف لتقليل الثقل */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.20);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  z-index: -1; /* خلف المحتوى */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(2px); /* blur أقل */
+  z-index: -1;
 }
 
 /* ====== الحاوية ====== */
 .wrap {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 22px;
+  padding: 20px;
 }
 
-/* ====== مكوّن عام للزجاجية ====== */
+/* ====== مكوّن الزجاج ====== */
 .glass {
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 16px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
-  -webkit-backdrop-filter: blur(12px) saturate(120%);
-  backdrop-filter: blur(12px) saturate(120%);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #fff;
+  transition: transform 0.2s ease;
+}
+.glass:hover {
+  transform: translateY(-2px);
 }
 
 /* ====== الهيدر ====== */
 .glass-header {
   text-align: center;
-  padding: 30px 18px;
-  margin: 0 0 22px;
-  background: rgba(46, 125, 50, 0.22); /* أخضر شفاف */
+  padding: 25px 15px;
+  margin: 0 0 20px;
+  background: rgba(46, 125, 50, 0.25);
 }
 header h1 {
   margin: 0;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 800;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
-  letter-spacing: 0.3px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 header p {
-  margin: 10px 0 0;
-  font-size: 18px;
-  opacity: 0.95;
+  margin: 8px 0 0;
+  font-size: 16px;
+  opacity: 0.9;
 }
 
-/* ====== البطاقات/الأقسام ====== */
+/* ====== البطاقات ====== */
 .card {
-  padding: 20px 18px;
-  margin: 22px 0;
-  text-align: right; /* لضمان RTL داخل البطاقات */
+  padding: 18px;
+  margin: 18px 0;
+  text-align: right;
 }
 
 /* ====== العناوين ====== */
 h2 {
   display: inline-block;
-  margin: 0 0 14px 0;
-  padding: 8px 14px 10px;
-  font-size: 22px;
+  margin: 0 0 12px;
+  padding: 6px 12px;
+  font-size: 20px;
   font-weight: 700;
-  color: #eaf7ff;
-  background: rgba(13, 71, 161, 0.25); /* أزرق شفاف خلف العنوان */
-  border-radius: 10px;
-  border-bottom: 3px solid #ffc107;    /* تسطير ذهبي */
+  color: #f9f9f9;
+  background: rgba(13, 71, 161, 0.2);
+  border-radius: 8px;
+  border-bottom: 2px solid #ffc107;
 }
 
 /* ====== القوائم ====== */
@@ -93,52 +92,58 @@ ul {
   padding: 0;
 }
 li {
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.20);
-  border-radius: 10px;
-  padding: 10px 12px;
-  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 9px 11px;
+  margin: 8px 0;
 }
 
 /* ====== زر التسجيل ====== */
 .center-btn {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .register-btn {
   display: inline-block;
-  padding: 13px 28px;
-  font-size: 17px;
-  font-weight: 800;
+  padding: 11px 24px;
+  font-size: 16px;
+  font-weight: 700;
   color: #fff;
   text-decoration: none;
-  border-radius: 999px;
+  border-radius: 50px;
   background: linear-gradient(135deg, #43a047, #2e7d32);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .register-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.45);
-  opacity: 0.95;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* ====== الجملة الإضافية ====== */
+.hope {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 15px;
+  color: #ffe082;
 }
 
 /* ====== الفوتر ====== */
 .glass-footer {
   text-align: center;
-  padding: 18px;
-  margin-top: 28px;
+  padding: 14px;
+  margin-top: 22px;
   background: rgba(0, 0, 0, 0.35);
-  font-size: 15px;
-  color: #f3f3f3;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.25);
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* ====== تحسينات لموبايل ====== */
+/* ====== موبايل ====== */
 @media (max-width: 600px) {
-  header h1 { font-size: 24px; }
-  header p { font-size: 16px; }
-  h2 { font-size: 20px; }
-  .register-btn { font-size: 16px; padding: 12px 24px; }
+  header h1 { font-size: 22px; }
+  header p { font-size: 14px; }
+  h2 { font-size: 18px; }
+  .register-btn { font-size: 15px; padding: 10px 20px; }
 }
