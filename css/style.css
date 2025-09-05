@@ -1,152 +1,97 @@
-/* ===== إعداد عام وخلفية خفيفة محسّنة للأداء ===== */
-html, body { height: 100%; }
+/* خلفية مع صورة القرآن */
 body {
   margin: 0;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Cairo", sans-serif;
+  background: url('https://images.openai.com/blob/Db0s7nicu1mUUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw4qT_QvN3Avz_eKSDWt8gg1LPD1NDfKLyipLMv190oKK83PSc7xC3QyczXyL8z1LHd2dvdKKitIMs5SKwYA3MMpxw?width=1200&height=800&quality=80') 
+    no-repeat center center/cover;
   color: #fff;
-  line-height: 1.8;
-  /* صورة خلفية خفيفة وحجم مناسب (من Picsum) */
-  background:
-    linear-gradient(180deg, rgba(3,37,65,0.45), rgba(6,58,110,0.45)),
-    url('https://picsum.photos/1200/800?blur=2') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-}
-
-/* طبقة تغطية خفيفة بدلاً من blur ثقيل */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.25);
-  z-index: -1;
-}
-
-/* Reduce motion support */
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
-}
-
-/* ===== الحاوية الرئيسية ===== */
-.wrap {
-  max-width: 1000px;
-  margin: 18px auto;
-  padding: 18px;
-}
-
-/* ===== قواعد الزجاجية الخفيفة (أداء أفضل) ===== */
-.glass {
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  -webkit-backdrop-filter: blur(6px) saturate(110%);
-  backdrop-filter: blur(6px) saturate(110%);
-  color: #fff;
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
-}
-
-/* خفف التأثير عند اللمس لكي لا يثقل على الجوال */
-.glass:active,
-.glass:focus { transform: none; box-shadow: 0 6px 14px rgba(0,0,0,0.28); }
-
-/* ===== الهيدر ===== */
-.glass-header {
-  padding: 22px 14px;
   text-align: center;
-  margin-bottom: 16px;
-  background: linear-gradient(90deg, rgba(46,125,50,0.12), rgba(13,71,161,0.08));
 }
 
-/* عنوان والموقع */
+/* تغليف المحتوى */
+.wrap {
+  padding: 20px;
+}
+
+/* العنوان الرئيسي */
 header h1 {
-  margin: 0;
   font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-}
-.location {
-  margin: 8px 0 0;
-  font-size: 15px;
-  color: #e6f7ff;
-  opacity: 0.95;
+  margin: 10px 0;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
-/* ===== البطاقات ===== */
+header p {
+  font-size: 18px;
+  color: #eee;
+}
+
+/* البطاقات الزجاجية */
 .card {
-  padding: 16px;
-  margin: 14px 0;
-  text-align: right;
-}
-
-/* ===== العناوين داخل البطاقات مع تسطير ذهبي ===== */
-h2 {
-  display: inline-block;
-  margin: 0 0 12px 0;
-  padding: 6px 12px;
-  font-size: 20px;
-  font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   color: #fff;
-  background: rgba(13,71,161,0.12);
-  border-radius: 8px;
-  border-bottom: 2px solid #ffc107; /* تسطير ذهبي */
+  text-align: right;
+  line-height: 1.8;
 }
 
-/* ===== القوائم ===== */
-ul { list-style: none; padding: 0; margin: 8px 0 0 0; }
-li {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 8px;
-  padding: 10px 12px;
+/* عناوين داخل البطاقات */
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(255,255,255,0.5);
+  padding-bottom: 5px;
+}
+
+/* القوائم */
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li {
   margin: 8px 0;
-  font-size: 15px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
 }
 
-/* ===== زر التسجيل ===== */
-.center-btn { text-align: center; margin-top: 14px; }
+/* زر التسجيل */
 .register-btn {
   display: inline-block;
-  padding: 11px 24px;
-  font-size: 16px;
-  font-weight: 800;
-  color: #fff;
+  background: rgba(0, 128, 255, 0.6);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
   text-decoration: none;
-  border-radius: 999px;
-  background: linear-gradient(135deg,#2e7d32,#1b5e20);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.30);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.register-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,0.36); }
-
-/* ===== جملة الرجاء (مميزة داخل الخدمات) ===== */
-.hope {
-  margin-top: 10px;
-  font-style: italic;
-  font-size: 15px;
-  color: #ffe082; /* ذهبي فاتح */
-  background: rgba(0,0,0,0.12);
-  padding: 8px 10px;
-  border-radius: 8px;
+  font-size: 18px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
 }
 
-/* ===== الفوتر ===== */
-.glass-footer {
-  text-align: center;
-  padding: 12px;
-  margin-top: 18px;
+.register-btn:hover {
+  background: rgba(0, 128, 255, 0.9);
+  transform: scale(1.05);
+}
+
+/* الفوتر */
+footer {
+  margin-top: 30px;
   font-size: 14px;
-  background: rgba(0,0,0,0.28);
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
+  color: #eee;
 }
 
-/* ===== تحسينات للهواتف ===== */
-@media (max-width: 600px) {
-  header h1 { font-size: 22px; }
-  .location { font-size: 13px; }
-  h2 { font-size: 18px; }
-  li { font-size: 14px; padding: 9px; }
-  .register-btn { font-size: 15px; padding: 10px 18px; }
+/* النص الإضافي (رجاؤنا في الله كبير) */
+.hope {
+  margin-top: 15px;
+  font-style: italic;
+  font-weight: bold;
+  color: #cfe9ff;
+  text-align: center;
 }
