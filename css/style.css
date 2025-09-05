@@ -1,88 +1,144 @@
-/* خلفية مع صورة مسجد وتأثير ضبابي */
+/* ====== خلفية + طبقة ضباب خفيفة ثابتة ====== */
+html, body {
+  height: 100%;
+}
 body {
   margin: 0;
-  font-family: "Cairo", sans-serif;
-  background: url('https://i.ibb.co/SNHkVzz/mosque-bg.jpg') no-repeat center center/cover;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  font-family: Tahoma, Arial, sans-serif;
   color: #fff;
-  text-align: center;
+  background:
+    /* تدرّج خفيف كطبقة احتياطية لو فشلت الصورة */
+    linear-gradient(135deg, #0e4b1f 0%, #0a2a4a 100%),
+    /* صورة خلفية من مصدر موثوق (Unsplash) */
+    url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80')
+    no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  line-height: 1.9;
 }
 
-/* تغليف المحتوى */
+/* ضباب بسيط فوق الخلفية (خارج المحتوى) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.20);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  z-index: -1; /* خلف المحتوى */
+}
+
+/* ====== الحاوية ====== */
 .wrap {
-  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 22px;
 }
 
-/* العنوان الرئيسي */
-header h1 {
-  font-size: 28px;
-  margin: 10px 0;
-  text-shadow: 0 0 10px rgba(0,0,0,0.8);
-}
-
-header p {
-  font-size: 18px;
-  color: #eee;
-}
-
-/* البطاقات الزجاجية */
-.card {
-  background: rgba(255, 255, 255, 0.15);
+/* ====== مكوّن عام للزجاجية ====== */
+.glass {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 16px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 800px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  backdrop-filter: blur(12px) saturate(120%);
   color: #fff;
-  text-align: right;
 }
 
-/* عناوين داخل البطاقات */
-.card h2 {
+/* ====== الهيدر ====== */
+.glass-header {
+  text-align: center;
+  padding: 30px 18px;
+  margin: 0 0 22px;
+  background: rgba(46, 125, 50, 0.22); /* أخضر شفاف */
+}
+header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  letter-spacing: 0.3px;
+}
+header p {
+  margin: 10px 0 0;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+/* ====== البطاقات/الأقسام ====== */
+.card {
+  padding: 20px 18px;
+  margin: 22px 0;
+  text-align: right; /* لضمان RTL داخل البطاقات */
+}
+
+/* ====== العناوين ====== */
+h2 {
+  display: inline-block;
+  margin: 0 0 14px 0;
+  padding: 8px 14px 10px;
   font-size: 22px;
-  margin-bottom: 10px;
-  border-bottom: 2px solid rgba(255,255,255,0.5);
-  padding-bottom: 5px;
+  font-weight: 700;
+  color: #eaf7ff;
+  background: rgba(13, 71, 161, 0.25); /* أزرق شفاف خلف العنوان */
+  border-radius: 10px;
+  border-bottom: 3px solid #ffc107;    /* تسطير ذهبي */
 }
 
-/* القوائم */
-.card ul {
+/* ====== القوائم ====== */
+ul {
   list-style: none;
+  margin: 0;
   padding: 0;
 }
-
-.card ul li {
-  margin: 8px 0;
-  padding: 5px 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+li {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 10px 0;
 }
 
-/* زر التسجيل */
+/* ====== زر التسجيل ====== */
+.center-btn {
+  text-align: center;
+  margin-top: 20px;
+}
 .register-btn {
   display: inline-block;
-  background: rgba(0, 128, 255, 0.6);
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
+  padding: 13px 28px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
   text-decoration: none;
-  font-size: 18px;
-  margin-top: 15px;
-  transition: all 0.3s ease;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
 }
-
 .register-btn:hover {
-  background: rgba(0, 128, 255, 0.9);
-  transform: scale(1.05);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.45);
+  opacity: 0.95;
 }
 
-/* الفوتر */
-footer {
-  margin-top: 30px;
-  font-size: 14px;
-  color: #eee;
+/* ====== الفوتر ====== */
+.glass-footer {
+  text-align: center;
+  padding: 18px;
+  margin-top: 28px;
+  background: rgba(0, 0, 0, 0.35);
+  font-size: 15px;
+  color: #f3f3f3;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* ====== تحسينات لموبايل ====== */
+@media (max-width: 600px) {
+  header h1 { font-size: 24px; }
+  header p { font-size: 16px; }
+  h2 { font-size: 20px; }
+  .register-btn { font-size: 16px; padding: 12px 24px; }
 }
