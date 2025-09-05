@@ -2,12 +2,24 @@ body {
   font-family: 'Tahoma', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f6f9;
+  background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+  background-size: cover;
   color: #222;
   line-height: 1.9;
 }
 
-/* الحاوية الرئيسية */
+/* طبقة شفافة خفيفة فوق الخلفية */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+/* الحاوية */
 .wrap {
   max-width: 1000px;
   margin: auto;
@@ -16,20 +28,21 @@ body {
 
 /* الهيدر */
 header {
-  background: linear-gradient(135deg, #2e7d32, #388e3c);
+  background: rgba(46, 125, 50, 0.7);
+  backdrop-filter: blur(8px);
   text-align: center;
   padding: 35px 15px;
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px;
   color: white;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  margin-bottom: 25px;
 }
 
 header h1 {
   font-size: 32px;
   margin: 0;
   font-weight: bold;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 }
 
 header p {
@@ -38,41 +51,29 @@ header p {
   opacity: 0.95;
 }
 
-/* إعلان */
-.announcement {
-  background-color: #ffffff;
-  border-right: 5px solid #ffc107;
+/* البطاقات الزجاجية */
+.card {
+  background: rgba(255,255,255,0.35);
+  border-radius: 15px;
   padding: 20px;
-  margin: 25px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  font-size: 17px;
-  line-height: 1.9;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.5);
 }
 
 /* العناوين */
 h2 {
   font-size: 22px;
-  color: #1565c0;
+  color: #0d47a1;
   border-bottom: 3px solid #ffc107;
   display: inline-block;
   padding-bottom: 6px;
   margin-bottom: 18px;
   font-weight: bold;
-  background: #e3f2fd;
+  background: rgba(227,242,253,0.6);
   padding: 8px 14px;
   border-radius: 6px;
-}
-
-/* القوائم */
-ul {
-  padding-right: 25px;
-  margin-bottom: 25px;
-}
-
-li {
-  margin-bottom: 12px;
-  font-size: 16px;
 }
 
 /* زر التسجيل */
@@ -87,30 +88,24 @@ li {
   background: linear-gradient(135deg, #43a047, #2e7d32);
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: bold;
   font-size: 18px;
-  box-shadow: 0 5px 14px rgba(0,0,0,0.25);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.3);
   transition: all 0.3s ease-in-out;
 }
 .register-btn:hover {
   background: linear-gradient(135deg, #2e7d32, #1b5e20);
-  transform: translateY(-3px);
-}
-
-/* الأقسام */
-section {
-  margin-bottom: 40px;
+  transform: scale(1.07);
 }
 
 /* الفوتر */
 footer {
   text-align: center;
   padding: 18px;
-  color: #555;
-  margin-top: 40px;
+  color: #fff;
   font-size: 15px;
-  border-top: 2px solid #ddd;
-  background-color: #fafafa;
+  margin-top: 40px;
+  background: rgba(0,0,0,0.6);
   border-radius: 12px;
 }
