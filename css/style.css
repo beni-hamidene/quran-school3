@@ -1,111 +1,73 @@
+/* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Tahoma", sans-serif;
+  box-sizing: border-box;
 }
 
+/* الخلفية */
 body {
-  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-  color: #222;
-  line-height: 1.7;
-  direction: rtl;
-}
-
-.wrap {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-
-header.glass-header {
+  font-family: "Tajawal", Arial, sans-serif;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('mosque.jpg') no-repeat center center/cover;
+  color: #fff;
   text-align: center;
+  line-height: 1.6;
+}
+
+/* رأس الصفحة */
+header {
+  background: rgba(0, 0, 0, 0.4);
   padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 header h1 {
-  font-size: 28px;
-  color: #2c3e50;
-  margin-bottom: 8px;
+  font-size: 2.2rem;
+  color: #ffd700;
 }
 
-header p {
-  font-size: 16px;
-  color: #555;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(6px);
+/* الأقسام */
+section {
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-h2 {
-  font-size: 20px;
-  color: #2c3e50;
-  margin-bottom: 12px;
-  border-right: 6px solid #3498db;
-  padding-right: 10px;
+/* العناوين */
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #00ffcc;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
-  padding: 6px 0;
-  border-bottom: 1px dashed #ddd;
-}
-
-ul li:last-child {
-  border-bottom: none;
-}
-
-.register-btn {
+/* الروابط */
+a {
   display: inline-block;
-  padding: 12px 24px;
-  background: #27ae60;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.register-btn:hover {
-  background: #219150;
-}
-
-.center-btn {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.note {
   margin-top: 10px;
-  font-size: 14px;
-  color: #666;
-  font-style: italic;
+  padding: 10px 20px;
+  text-decoration: none;
+  background: rgba(255, 215, 0, 0.8);
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s;
 }
 
-footer.glass-footer {
-  text-align: center;
+a:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+/* التذييل */
+footer {
+  margin-top: 40px;
   padding: 15px;
-  font-size: 14px;
-  color: #444;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(6px);
-  border-radius: 12px;
-  margin-top: 20px;
+  background: rgba(0,0,0,0.6);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
