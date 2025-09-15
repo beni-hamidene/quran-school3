@@ -1,439 +1,113 @@
-/* ===== إعداد عام وخلفية خفيفة محسّنة للأداء ===== */
-html, body { height: 100%; }
-body {
-  margin: 0;
-  font-family: Tahoma, Arial, sans-serif;
-  color: #fff;
-  line-height: 1.8;
-  /* صورة خلفية خفيفة وحجم مناسب (من Picsum) */
-  background:
-    linear-gradient(180deg, rgba(3,37,65,0.45), rgba(6,58,110,0.45)),
-    url('https://picsum.photos/1200/800?blur=2') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-  overflow-x: hidden;
+/* css/style.css */
+:root{
+  --main-green:#2e7d32;
+  --light-green:#e8f5e9;
+  --muted:#f1f1f1;
+  --card-bg:#ffffff;
+  --text:#222;
 }
 
-/* طبقة تغطية خفيفة بدلاً من blur ثقيل */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.25);
-  z-index: -1;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Tahoma, "Segoe UI", Roboto, sans-serif;
+  background: #f7f9fc;
+  color:var(--text);
+  direction:rtl;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
 }
 
-/* إضافة تأثير الجسيمات المتحركة */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.1), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.08), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.06), transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.04), transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: sparkle 20s linear infinite;
-  z-index: -1;
-  pointer-events: none;
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+.site-header{
+  background:var(--main-green);
+  color:#fff;
+  padding:20px 0;
+  text-align:center;
+}
+.site-header h1{margin:0;font-size:26px;font-weight:700}
+.location{margin:6px 0 0;font-size:14px;opacity:0.95}
+
+/* المحتوى */
+.container{
+  max-width:900px;
+  margin:26px auto;
+  background:var(--card-bg);
+  padding:22px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  text-align:right;
 }
 
-@keyframes sparkle {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-200px); }
+/* المقدمة */
+.intro{
+  background:var(--muted);
+  padding:12px;
+  border-radius:6px;
+  margin-bottom:14px;
 }
 
-/* Reduce motion support */
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
-  body::after { animation: none !important; }
+/* الأزرار */
+.center-btn{ text-align:center;margin:12px 0 18px }
+.register-btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--main-green),#1b5e20);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 8px 20px rgba(46,125,50,0.18);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.register-btn:hover{ transform:translateY(-3px); box-shadow:0 14px 30px rgba(46,125,50,0.25) }
+
+/* العناوين والقوائم */
+h2{
+  color:var(--main-green);
+  font-size:20px;
+  margin:18px 0 10px;
+  display:inline-block;
+  padding:6px 12px;
+  border-right:4px solid var(--main-green);
+  border-radius:6px;
+  background:linear-gradient(90deg, rgba(46,125,50,0.04), transparent);
 }
 
-/* ===== الحاوية الرئيسية ===== */
-.wrap {
-  max-width: 1000px;
-  margin: 18px auto;
-  padding: 18px;
-  animation: fadeInUp 0.8s ease-out;
+ul{list-style:none;padding:0;margin:0}
+ul li{
+  background:#fafafa;
+  border:1px solid #f0f0f0;
+  padding:10px 12px;
+  border-radius:6px;
+  margin:8px 0;
 }
 
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* الملاحظة */
+.note{
+  margin-top:12px;
+  padding:12px;
+  background:#fff3cd;
+  border:1px solid #ffe08a;
+  border-radius:6px;
+  font-weight:600;
 }
 
-/* ===== قواعد الزجاجية الخفيفة (أداء أفضل) ===== */
-.glass {
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  -webkit-backdrop-filter: blur(6px) saturate(110%);
-  backdrop-filter: blur(6px) saturate(110%);
-  color: #fff;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+/* الفوتر */
+.site-footer{
+  text-align:center;
+  margin:24px 0 40px;
+  color:#666;
+  font-size:14px;
 }
 
-/* تأثير الإضاءة عند التمرير */
-.glass::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-  transform: translateX(-100%) translateY(-100%) rotate(45deg);
-  transition: transform 0.6s ease;
-  pointer-events: none;
-}
-
-.glass:hover::before {
-  transform: translateX(100%) translateY(100%) rotate(45deg);
-}
-
-.glass:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-  border-color: rgba(255,255,255,0.2);
-}
-
-/* خفف التأثير عند اللمس لكي لا يثقل على الجوال */
-.glass:active,
-.glass:focus { transform: none; box-shadow: 0 6px 14px rgba(0,0,0,0.28); }
-
-/* ===== الهيدر ===== */
-.glass-header {
-  padding: 22px 14px;
-  text-align: center;
-  margin-bottom: 16px;
-  background: linear-gradient(90deg, rgba(46,125,50,0.12), rgba(13,71,161,0.08));
-  animation: slideInDown 0.6s ease-out 0.2s both;
-}
-
-@keyframes slideInDown {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* عنوان والموقع */
-header h1 {
-  margin: 0;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-  background: linear-gradient(135deg, #fff, #e3f2fd);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: glow 3s ease-in-out infinite alternate;
-  position: relative;
-}
-
-/* إضافة رمز القرآن للعنوان */
-header h1::before {
-  content: "📖";
-  position: absolute;
-  right: -40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  animation: float 2s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(-50%) translateX(0); }
-  50% { transform: translateY(-60%) translateX(3px); }
-}
-
-@keyframes glow {
-  0% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.3)); }
-  100% { filter: drop-shadow(0 0 15px rgba(255,255,255,0.6)); }
-}
-
-.location {
-  margin: 8px 0 0;
-  font-size: 15px;
-  color: #e6f7ff;
-  opacity: 0.95;
-  animation: pulse 2s ease-in-out infinite;
-  position: relative;
-}
-
-.location::before {
-  content: "🕌";
-  margin-left: 5px;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.95; }
-  50% { opacity: 1; }
-}
-
-/* ===== البطاقات ===== */
-.card {
-  padding: 16px;
-  margin: 14px 0;
-  text-align: right;
-  animation: slideInRight 0.6s ease-out;
-}
-
-.card:nth-child(even) {
-  animation: slideInLeft 0.6s ease-out;
-}
-
-@keyframes slideInRight {
-  0% { opacity: 0; transform: translateX(30px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInLeft {
-  0% { opacity: 0; transform: translateX(-30px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-/* تنسيق خاص للمقدمة */
-.intro {
-  background: linear-gradient(135deg, rgba(76,175,80,0.15), rgba(46,125,50,0.08));
-  border-right: 4px solid #4caf50;
-  font-size: 16px;
-  line-height: 2;
-}
-
-.intro strong {
-  color: #81c784;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-}
-
-/* ===== العناوين داخل البطاقات مع تسطير ذهبي ===== */
-h2 {
-  display: inline-block;
-  margin: 0 0 12px 0;
-  padding: 6px 12px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  background: rgba(13,71,161,0.12);
-  border-radius: 8px;
-  border-bottom: 2px solid #ffc107;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-/* إضافة رموز للعناوين */
-h2:nth-of-type(1)::before { content: "📋 "; }
-h2:nth-of-type(2)::before { content: "📚 "; }
-h2:nth-of-type(3)::before { content: "⚠️ "; }
-
-h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #ffc107, #ff9800);
-  transition: width 0.3s ease;
-}
-
-h2:hover::after {
-  width: 100%;
-}
-
-h2:hover {
-  background: rgba(13,71,161,0.2);
-  transform: scale(1.02);
-}
-
-/* ===== القوائم ===== */
-ul { list-style: none; padding: 0; margin: 8px 0 0 0; }
-li {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 8px;
-  padding: 10px 12px;
-  margin: 8px 0;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-li::before {
-  content: "🌟";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-li:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.2);
-  transform: translateX(-3px);
-  box-shadow: 3px 0 10px rgba(76,175,80,0.2);
-}
-
-li:hover::before {
-  opacity: 1;
-}
-
-/* ===== الفقرات العادية ===== */
-p {
-  font-size: 15px;
-  line-height: 1.8;
-  margin: 12px 0;
-}
-
-section p {
-  background: rgba(255,255,255,0.05);
-  padding: 10px 12px;
-  border-radius: 8px;
-  border-right: 3px solid #2196f3;
-  transition: all 0.3s ease;
-}
-
-section p:hover {
-  background: rgba(255,255,255,0.1);
-  border-right-color: #03a9f4;
-  transform: translateX(-2px);
-}
-
-/* ===== زر التسجيل ===== */
-.center-btn { text-align: center; margin-top: 14px; }
-.register-btn {
-  display: inline-block;
-  padding: 11px 24px;
-  font-size: 16px;
-  font-weight: 800;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 999px;
-  background: linear-gradient(135deg,#2e7d32,#1b5e20);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.30);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.register-btn::before {
-  content: "📝 ";
-  margin-left: 5px;
-}
-
-.register-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.register-btn:hover::after {
-  left: 100%;
-}
-
-.register-btn:hover { 
-  transform: translateY(-3px) scale(1.05); 
-  box-shadow: 0 15px 30px rgba(46,125,50,0.4);
-  background: linear-gradient(135deg,#388e3c,#2e7d32);
-}
-
-/* ===== جملة الرجاء (مميزة داخل الخدمات) ===== */
-.hope {
-  margin-top: 10px;
-  font-style: italic;
-  font-size: 15px;
-  color: #ffe082;
-  background: rgba(0,0,0,0.12);
-  padding: 8px 10px;
-  border-radius: 8px;
-  border-right: 3px solid #ffc107;
-  transition: all 0.3s ease;
-  animation: fadeIn 1s ease-out 1s both;
-  position: relative;
-}
-
-.hope::before {
-  content: "🤲";
-  margin-left: 5px;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.hope:hover {
-  background: rgba(255,193,7,0.1);
-  border-right-color: #ff9800;
-  transform: translateX(-5px);
-}
-
-/* ===== الفوتر ===== */
-.glass-footer {
-  text-align: center;
-  padding: 12px;
-  margin-top: 18px;
-  font-size: 14px;
-  background: rgba(0,0,0,0.28);
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
-  animation: slideInUp 0.6s ease-out 0.8s both;
-}
-
-@keyframes slideInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== تحسينات للهواتف ===== */
-@media (max-width: 600px) {
-  header h1 { 
-    font-size: 22px; 
-    padding-left: 30px; /* مساحة للرمز */
-  }
-  header h1::before { right: -30px; font-size: 20px; }
-  .location { font-size: 13px; }
-  h2 { font-size: 18px; }
-  li { font-size: 14px; padding: 9px; }
-  .register-btn { font-size: 15px; padding: 10px 18px; }
-  
-  /* تقليل التأثيرات على الجوال للأداء */
-  .glass:hover { transform: none; }
-  .register-btn:hover { transform: translateY(-2px) scale(1.02); }
-  body::after { display: none; }
-}
-
-/* إضافة تأثيرات تحميل جميلة */
-@keyframes shimmer {
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
-}
-
-.loading-effect {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  background-size: 200px 100%;
-  animation: shimmer 2s infinite;
-}
-
-/* تأثيرات خاصة للمحتوى الديني */
-.islamic-glow {
-  animation: islamicGlow 4s ease-in-out infinite alternate;
-}
-
-@keyframes islamicGlow {
-  0% { box-shadow: 0 0 5px rgba(76,175,80,0.3); }
-  100% { box-shadow: 0 0 15px rgba(76,175,80,0.6), 0 0 25px rgba(76,175,80,0.4); }
+/* responsive */
+@media(max-width:640px){
+  .container{padding:16px;margin:16px}
+  .site-header h1{font-size:20px}
+  h2{font-size:18px}
+  .register-btn{padding:10px 16px;font-size:15px}
 }
