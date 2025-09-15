@@ -1,51 +1,71 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>إعلان التسجيل</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container glass">
-    <h1>المدرسة القرآنية بمسجد سلمة بن الأكوع</h1>
-    <p>تعلن المدرسة القرآنية بمسجد سلَمة بن الأكوع ببلدية بني حميدان، عن فتح التسجيلات لحفظ القرآن الكريم لفائدة المتخرجين من الجامعة ولم يتحصلوا على شغل بعد.</p>
+/* خلفية عامة */
+body {
+  margin: 0;
+  font-family: "Tajawal", Arial, sans-serif;
+  background: url('mosque-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
 
-    <h2>شروط الالتحاق بالمدرسة</h2>
-    <ul>
-      <li>المستوى الدراسي جامعي للذكور و الإناث</li>
-      <li>التفرغ التام للدراسة اليومية، ما عدا يوم الجمعة</li>
-      <li>السلامة من الأمراض المعيقة عن الدراسة</li>
-      <li>الالتزام بنظام المدرسة والسلوك الحسن</li>
-      <li>ملء استمارة التسجيل الإلكترونية</li>
-      <li>التسجيل الورقي يكون عند انطلاق الدراسة</li>
-    </ul>
+/* تأثير الزجاج */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
 
-    <!-- 🔹 زر التسجيل في الوسط -->
-    <div class="center-btn">
-      <a class="register-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeC_qg2UeXGecIhJ8lwiwco0bAv__QEP-v5yNUqcawHl0W2nA/viewform?usp=dialog" 
-         target="_blank" rel="noopener noreferrer">
-        التسجيل الإلكتروني
-      </a>
-    </div>
+/* العناوين */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #fff;
+}
 
-    <h2>ماذا تقدم المدرسة؟</h2>
-    <ul>
-      <li>حفظ القرآن الكريم كاملاً في مدة عامين؛ أي بمعدل ثمن حزب يومياً</li>
-      <li>دروس في أحكام التجويد (حفظ متن الجزرية ومتن الدرر اللوامع)</li>
-      <li>إجازة برواية ورش من طريق الأزرق لطلبة المدرسة فقط</li>
-      <li>الدراسة مجانية عدا حقوق التسجيل والتأمين</li>
-    </ul>
+/* القوائم */
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
 
-    <h2>خدمات لا توفرها المدرسة</h2>
-    <ul>
-      <li>الإطعام</li>
-      <li>النقل</li>
-      <li>الإيواء</li>
-      <li>لا توجد منحة دراسية</li>
-    </ul>
+/* ملاحظة */
+.note {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+}
 
-    <p class="note">ملاحظة: هذه الخدمات مرتبطة بجهود المحسنين</p>
-  </div>
-</body>
-</html>
+/* زر التسجيل */
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.register-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.register-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
