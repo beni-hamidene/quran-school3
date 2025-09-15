@@ -1,4 +1,4 @@
-/* ===== إعداد عام وخلفية مسجد الأمير عبد القادر ===== */
+/* ===== إعداد عام وخلفية خفيفة محسّنة للأداء ===== */
 html, body {
     height: 100%;
 }
@@ -8,22 +8,19 @@ body {
     font-family: Tahoma, Arial, sans-serif;
     color: #fff;
     line-height: 1.8;
-    /* خلفية مسجد الأمير عبد القادر بقسنطينة */
-    background: 
-        linear-gradient(180deg, rgba(3,37,65,0.6), rgba(6,58,110,0.5)), 
-        url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    /* صورة خلفية خفيفة وحجم مناسب (من Picsum) */
+    background: linear-gradient(180deg, rgba(3,37,65,0.45), rgba(6,58,110,0.45)), url('https://picsum.photos/1200/800?blur=2') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     overflow-x: hidden;
 }
 
-/* طبقة تغطية زجاجية خفيفة */
+/* طبقة تغطية خفيفة بدلاً من blur ثقيل */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(1px);
+    background: rgba(0,0,0,0.25);
     z-index: -1;
 }
 
@@ -81,12 +78,12 @@ body::after {
 
 /* ===== قواعد الزجاجية الخفيفة (أداء أفضل) ===== */
 .glass {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.14);
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    -webkit-backdrop-filter: blur(8px) saturate(120%);
-    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(6px) saturate(110%);
+    backdrop-filter: blur(6px) saturate(110%);
     color: #fff;
     transition: all 0.3s ease;
     position: relative;
@@ -128,7 +125,7 @@ body::after {
     padding: 22px 14px;
     text-align: center;
     margin-bottom: 16px;
-    background: linear-gradient(90deg, rgba(46,125,50,0.15), rgba(13,71,161,0.1));
+    background: linear-gradient(90deg, rgba(46,125,50,0.12), rgba(13,71,161,0.08));
     animation: slideInDown 0.6s ease-out 0.2s both;
 }
 
@@ -149,7 +146,7 @@ header h1 {
     font-size: 28px;
     font-weight: 800;
     letter-spacing: 0.2px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
     background: linear-gradient(135deg, #fff, #e3f2fd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -181,34 +178,20 @@ header h1::before {
 
 @keyframes glow {
     0% {
-        filter: drop-shadow(0 0 5px rgba(255,255,255,0.4));
+        filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
     }
     100% {
-        filter: drop-shadow(0 0 15px rgba(255,255,255,0.7));
+        filter: drop-shadow(0 0 15px rgba(255,255,255,0.6));
     }
 }
 
-/* ===== رابط الموقع ===== */
 .location {
     margin: 8px 0 0;
     font-size: 15px;
+    color: #e6f7ff;
     opacity: 0.95;
     animation: pulse 2s ease-in-out infinite;
     position: relative;
-}
-
-.location-link {
-    color: #e6f7ff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border-bottom: 1px dashed rgba(255,255,255,0.3);
-    padding: 2px 0;
-}
-
-.location-link:hover {
-    color: #81c784;
-    border-bottom-color: #81c784;
-    text-shadow: 0 0 8px rgba(129, 199, 132, 0.5);
 }
 
 .location::before {
@@ -261,7 +244,7 @@ header h1::before {
 
 /* تنسيق خاص للمقدمة */
 .intro {
-    background: linear-gradient(135deg, rgba(76,175,80,0.18), rgba(46,125,50,0.1));
+    background: linear-gradient(135deg, rgba(76,175,80,0.15), rgba(46,125,50,0.08));
     border-right: 4px solid #4caf50;
     font-size: 16px;
     line-height: 2;
@@ -269,7 +252,7 @@ header h1::before {
 
 .intro strong {
     color: #81c784;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 /* ===== العناوين داخل البطاقات مع تسطير ذهبي ===== */
@@ -280,7 +263,7 @@ h2 {
     font-size: 20px;
     font-weight: 700;
     color: #fff;
-    background: rgba(13,71,161,0.15);
+    background: rgba(13,71,161,0.12);
     border-radius: 8px;
     border-bottom: 2px solid #ffc107;
     position: relative;
@@ -304,7 +287,7 @@ h2:hover::after {
 }
 
 h2:hover {
-    background: rgba(13,71,161,0.25);
+    background: rgba(13,71,161,0.2);
     transform: scale(1.02);
 }
 
@@ -329,8 +312,8 @@ ul {
 }
 
 li {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 8px;
     padding: 10px 12px;
     margin: 8px 0;
@@ -351,10 +334,10 @@ li::before {
 }
 
 li:hover {
-    background: rgba(255,255,255,0.15);
-    border-color: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.2);
     transform: translateX(-3px);
-    box-shadow: 3px 0 10px rgba(76,175,80,0.3);
+    box-shadow: 3px 0 10px rgba(76,175,80,0.2);
 }
 
 li:hover::before {
@@ -369,7 +352,7 @@ p {
 }
 
 section p {
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.05);
     padding: 10px 12px;
     border-radius: 8px;
     border-right: 3px solid #2196f3;
@@ -377,7 +360,7 @@ section p {
 }
 
 section p:hover {
-    background: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.1);
     border-right-color: #03a9f4;
     transform: translateX(-2px);
 }
@@ -397,7 +380,7 @@ section p:hover {
     text-decoration: none;
     border-radius: 999px;
     background: linear-gradient(135deg,#2e7d32,#1b5e20);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.30);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -425,7 +408,7 @@ section p:hover {
 
 .register-btn:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(46,125,50,0.5);
+    box-shadow: 0 15px 30px rgba(46,125,50,0.4);
     background: linear-gradient(135deg,#388e3c,#2e7d32);
 }
 
@@ -435,7 +418,7 @@ section p:hover {
     font-style: italic;
     font-size: 15px;
     color: #ffe082;
-    background: rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.12);
     padding: 8px 10px;
     border-radius: 8px;
     border-right: 3px solid #ffc107;
@@ -459,7 +442,7 @@ section p:hover {
 }
 
 .note:hover {
-    background: rgba(255,193,7,0.15);
+    background: rgba(255,193,7,0.1);
     border-right-color: #ff9800;
     transform: translateX(-5px);
 }
@@ -470,9 +453,9 @@ section p:hover {
     padding: 12px;
     margin-top: 18px;
     font-size: 14px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.28);
     border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.08);
     animation: slideInUp 0.6s ease-out 0.8s both;
 }
 
@@ -554,9 +537,9 @@ section p:hover {
 
 @keyframes islamicGlow {
     0% {
-        box-shadow: 0 0 5px rgba(76,175,80,0.4);
+        box-shadow: 0 0 5px rgba(76,175,80,0.3);
     }
     100% {
-        box-shadow: 0 0 15px rgba(76,175,80,0.7), 0 0 25px rgba(76,175,80,0.5);
+        box-shadow: 0 0 15px rgba(76,175,80,0.6), 0 0 25px rgba(76,175,80,0.4);
     }
 }
