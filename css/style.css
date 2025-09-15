@@ -1,4 +1,3 @@
-/* css/style.css */
 :root{
   --main-green:#2e7d32;
   --light-green:#e8f5e9;
@@ -15,8 +14,6 @@ body{
   background: #f7f9fc;
   color:var(--text);
   direction:rtl;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
   line-height:1.6;
 }
 
@@ -31,7 +28,6 @@ body{
 .site-header h1{margin:0;font-size:26px;font-weight:700}
 .location{margin:6px 0 0;font-size:14px;opacity:0.95}
 
-/* المحتوى */
 .container{
   max-width:900px;
   margin:26px auto;
@@ -42,7 +38,6 @@ body{
   text-align:right;
 }
 
-/* المقدمة */
 .intro{
   background:var(--muted);
   padding:12px;
@@ -50,7 +45,6 @@ body{
   margin-bottom:14px;
 }
 
-/* الأزرار */
 .center-btn{ text-align:center;margin:12px 0 18px }
 .register-btn{
   display:inline-block;
@@ -65,7 +59,6 @@ body{
 }
 .register-btn:hover{ transform:translateY(-3px); box-shadow:0 14px 30px rgba(46,125,50,0.25) }
 
-/* العناوين والقوائم */
 h2{
   color:var(--main-green);
   font-size:20px;
@@ -86,7 +79,6 @@ ul li{
   margin:8px 0;
 }
 
-/* الملاحظة */
 .note{
   margin-top:12px;
   padding:12px;
@@ -96,7 +88,6 @@ ul li{
   font-weight:600;
 }
 
-/* الفوتر */
 .site-footer{
   text-align:center;
   margin:24px 0 40px;
@@ -104,7 +95,6 @@ ul li{
   font-size:14px;
 }
 
-/* responsive */
 @media(max-width:640px){
   .container{padding:16px;margin:16px}
   .site-header h1{font-size:20px}
