@@ -1,73 +1,39 @@
-/* Reset */
-* {
+/* خلفية المسجد */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: url('https://i.ibb.co/6gDsTZY/mosque.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
-/* الخلفية */
-body {
-  font-family: "Tajawal", Arial, sans-serif;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('mosque.jpg') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
-  line-height: 1.6;
-}
-
-/* رأس الصفحة */
-header {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-header h1 {
-  font-size: 2.2rem;
-  color: #ffd700;
-}
-
-/* الأقسام */
+/* تأثير زجاجي للأقسام */
 section {
-  padding: 40px 20px;
-  margin: 20px auto;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: #222;
 }
 
-/* العناوين */
-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #00ffcc;
-}
-
-/* الروابط */
-a {
-  display: inline-block;
-  margin-top: 10px;
+/* زر التسجيل */
+button {
+  display: block;
+  margin: 20px auto;
   padding: 10px 20px;
-  text-decoration: none;
-  background: rgba(255, 215, 0, 0.8);
-  color: #000;
+  font-size: 18px;
   font-weight: bold;
-  border-radius: 30px;
-  transition: 0.3s;
+  background: linear-gradient(45deg, gold, orange);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-a:hover {
-  background: #ffd700;
-  transform: scale(1.05);
-}
-
-/* التذييل */
-footer {
-  margin-top: 40px;
-  padding: 15px;
-  background: rgba(0,0,0,0.6);
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
