@@ -1,71 +1,66 @@
-/* خلفية عامة */
-body {
-  margin: 0;
-  font-family: "Tajawal", Arial, sans-serif;
-  background: url('mosque-bg.jpg') no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>المدرسة القرآنية بمسجد سلمة بن الأكوع - بني حميدان</title>
+    <!-- ربط ملف CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class="glass glass-header">
+            <h1>المدرسة القرآنية بمسجد سلمة بن الأكوع</h1>
+            <p class="location">
+                <a href="https://maps.app.goo.gl/3E5pNr2zactU8LPF7" target="_blank" class="location-link">
+                    المكان: مسجد سلمة بن الأكوع — بلدية بني حميدان
+                </a>
+            </p>
+        </header>
 
-/* تأثير الزجاج */
-.glass {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 800px;
-  width: 100%;
-  color: #fff;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
+        <div class="card glass intro islamic-glow">
+            <p>تعلن <strong>المدرسة القرآنية بمسجد سلمة بن الأكوع</strong> ببلدية بني حميدان، عن فتح التسجيلات لحفظ القرآن الكريم لفائدة <strong>المتخرجين من الجامعة</strong> ولم يتحصلوا على شغل بعد.</p>
+        </div>
 
-/* العناوين */
-h1, h2 {
-  text-align: center;
-  margin-bottom: 15px;
-  color: #fff;
-}
+        <section class="card glass">
+            <h2 class="conditions-title">شروط الالتحاق بالمدرسة</h2>
+            <ul>
+                <li>المستوى الدراسي جامعي للذكور والإناث.</li>
+                <li>التفرغ التام للدراسة اليومية، ما عدا يوم الجمعة.</li>
+                <li>السلامة من الأمراض المعيقة عن الدراسة.</li>
+                <li>الالتزام بنظام المدرسة والسلوك الحسن.</li>
+                <li>ملء استمارة التسجيل الإلكترونية.</li>
+                <li>التسجيل الورقي يكون عند انطلاق الدراسة.</li>
+            </ul>
+            <div class="center-btn">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeC_qg2UeXGecIhJ8lwiwco0bAv__QEP-v5yNUqcawHl0W2nA/viewform?usp=dialog" target="_blank" class="register-btn">التسجيل الإلكتروني</a>
+            </div>
+        </section>
 
-/* القوائم */
-ul {
-  list-style: none;
-  padding: 0;
-}
-ul li {
-  background: rgba(255, 255, 255, 0.1);
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 10px;
-}
+        <section class="card glass">
+            <h2 class="services-title">ماذا تقدم المدرسة؟</h2>
+            <ul>
+                <li>حفظ القرآن الكريم كاملاً في مدة عامين؛ أي بمعدل ثُمن حزب يومياً.</li>
+                <li>دروس في أحكام التجويد (حفظ متن الجزرية ومتن الدرر اللوامع).</li>
+                <li>إجازة برواية ورش من طريق الأزرق للطلبة المتميزين فقط.</li>
+                <li>الدراسة مجانية عدا حقوق التسجيل والتأمين.</li>
+            </ul>
+        </section>
 
-/* ملاحظة */
-.note {
-  text-align: center;
-  margin-top: 20px;
-  font-style: italic;
-}
+        <section class="card glass">
+            <h2 class="no-services-title">خدمات لا توفرها المدرسة</h2>
+            <ul>
+                <li>الإطعام</li>
+                <li>النقل</li>
+                <li>الإيواء</li>
+                <li>لا توجد منحة دراسية</li>
+            </ul>
+            <p class="note">ملاحظة: هذه الخدمات مرتبطة بوجود المحسنين</p>
+        </section>
 
-/* زر التسجيل */
-.center-btn {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-.register-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #fff;
-  padding: 12px 24px;
-  border-radius: 12px;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.register-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(1.05);
-}
+        <footer class="glass glass-footer">
+            &copy; 2025 المدرسة القرآنية بمسجد سلمة بن الأكوع - بني حميدان.
+        </footer>
+    </div>
+</body>
+</html>
