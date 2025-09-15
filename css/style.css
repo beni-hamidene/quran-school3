@@ -12,9 +12,7 @@ body {
     font-family: 'Tahoma', Arial, sans-serif;
     color: #fff;
     line-height: 1.8;
-    background: linear-gradient(180deg, rgba(3,37,65,0.7), rgba(6,58,110,0.7)), 
-                url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop&crop=center') 
-                no-repeat center center fixed;
+    background: linear-gradient(180deg, rgba(3,37,65,0.7), rgba(6,58,110,0.7)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop&crop=center') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     overflow-x: hidden;
@@ -24,7 +22,10 @@ body {
 body::before {
     content: "";
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(0,0,0,0.3);
     z-index: -1;
 }
@@ -32,7 +33,10 @@ body::before {
 body::after {
     content: "";
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: 
         radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.15), transparent),
         radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.1), transparent),
@@ -57,8 +61,14 @@ body::after {
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .glass {
@@ -77,8 +87,10 @@ body::after {
 .glass::before {
     content: "";
     position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
     background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
     transform: translateX(-100%) translateY(-100%) rotate(45deg);
     transition: transform 0.8s ease;
@@ -104,8 +116,14 @@ body::after {
 }
 
 @keyframes slideInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 header h1 {
@@ -135,13 +153,21 @@ header h1::before {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(-50%) translateX(0); }
-    50%      { transform: translateY(-60%) translateX(5px); }
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-60%) translateX(5px);
+    }
 }
 
 @keyframes glow {
-    from { filter: drop-shadow(0 0 8px rgba(255,255,255,0.3)); }
-    to   { filter: drop-shadow(0 0 20px rgba(255,255,255,0.7)); }
+    from {
+        filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+    }
+    to {
+        filter: drop-shadow(0 0 20px rgba(255,255,255,0.7));
+    }
 }
 
 .location {
@@ -158,8 +184,13 @@ header h1::before {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.95; }
-    50%      { opacity: 1; transform: scale(1.02); }
+    0%, 100% {
+        opacity: 0.95;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
 }
 
 .card {
@@ -174,13 +205,25 @@ header h1::before {
 }
 
 @keyframes slideInRight {
-    from { opacity: 0; transform: translateX(50px); }
-    to   { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-50px); }
-    to   { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .intro {
@@ -213,22 +256,34 @@ h2 {
 h2::after {
     content: "";
     position: absolute;
-    bottom: 0; right: 0;
-    width: 0; height: 3px;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
     background: linear-gradient(90deg, #ffc107, #ff9800);
     transition: width 0.4s ease;
 }
 
-h2:hover::after { width: 100%; }
+h2:hover::after {
+    width: 100%;
+}
 
 h2:hover {
     background: rgba(13,71,161,0.3);
     transform: scale(1.05);
 }
 
-.conditions-title::before { content: "📋 "; }
-.services-title::before   { content: "🎓 "; }
-.no-services-title::before{ content: "⚠️ "; }
+.conditions-title::before {
+    content: "📋 ";
+}
+
+.services-title::before {
+    content: "🎓 ";
+}
+
+.no-services-title::before {
+    content: "⚠️ ";
+}
 
 ul {
     list-style: none;
@@ -251,7 +306,8 @@ li {
 li::before {
     content: "🌟";
     position: absolute;
-    right: 15px; top: 50%;
+    right: 15px;
+    top: 50%;
     transform: translateY(-50%);
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -264,7 +320,9 @@ li:hover {
     box-shadow: 5px 0 15px rgba(76,175,80,0.3);
 }
 
-li:hover::before { opacity: 1; }
+li:hover::before {
+    opacity: 1;
+}
 
 p {
     font-size: 16px;
@@ -314,13 +372,17 @@ section p:hover {
 .register-btn::after {
     content: "";
     position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
     transition: left 0.6s ease;
 }
 
-.register-btn:hover::after { left: 100%; }
+.register-btn:hover::after {
+    left: 100%;
+}
 
 .register-btn:hover {
     transform: translateY(-5px) scale(1.08);
@@ -347,8 +409,14 @@ section p:hover {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .note:hover {
@@ -369,8 +437,14 @@ section p:hover {
 }
 
 @keyframes slideInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .islamic-glow {
@@ -378,8 +452,12 @@ section p:hover {
 }
 
 @keyframes islamicGlow {
-    from { box-shadow: 0 0 10px rgba(76,175,80,0.4); }
-    to   { box-shadow: 0 0 20px rgba(76,175,80,0.8), 0 0 30px rgba(76,175,80,0.6); }
+    from {
+        box-shadow: 0 0 10px rgba(76,175,80,0.4);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(76,175,80,0.8), 0 0 30px rgba(76,175,80,0.6);
+    }
 }
 
 @media (max-width: 600px) {
@@ -388,11 +466,17 @@ section p:hover {
         padding-right: 40px;
     }
 
-    header h1::before { font-size: 22px; }
+    header h1::before {
+        font-size: 22px;
+    }
 
-    .location { font-size: 14px; }
+    .location {
+        font-size: 14px;
+    }
 
-    h2 { font-size: 19px; }
+    h2 {
+        font-size: 19px;
+    }
 
     li {
         font-size: 15px;
@@ -404,7 +488,11 @@ section p:hover {
         padding: 12px 25px;
     }
 
-    .glass:hover { transform: translateY(-3px); }
+    .glass:hover {
+        transform: translateY(-3px);
+    }
 
-    body::after { display: none; }
+    body::after {
+        display: none;
+    }
 }
