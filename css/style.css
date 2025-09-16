@@ -1,60 +1,93 @@
-/* style.css Pour: المدرسة القرآنية بمسجد سلمة بن الأكوع — صفحة GitHub Pages Instructions: Enregistrez ce fichier sous style.css à la racine de votre dépôt et poussez-le sur GitHub. Le fichier HTML fourni contient déjà :
+:root{
+  --bg-1: #071426;
+  --bg-2: #0b2a3f;
+  --glass: rgba(255,255,255,0.06);
+  --glass-strong: rgba(255,255,255,0.10);
+  --accent: rgba(255, 215, 102, 0.95);
+  --text: #fff;
+  --muted: #b3c7e2;
+  --max-width: 700px;
+  --card-radius: 18px;
+}
 
-   <link rel="stylesheet" href="style.css"> 
-   Ce CSS est conçu pour RTL, responsive et avec un effet 'glassmorphism'.
-*/:root{ --bg-1: #071426; /* deep navy / --bg-2: #0b2a3f; / slightly lighter / --glass: rgba(255,255,255,0.06); --glass-strong: rgba(255,255,255,0.10); --accent: rgba(255, 215, 102, 0.95); / warm gold */ --accent-soft: rgba(255,215,102,0.14); --text: #eaf6ff; --muted: rgba(234,246,255,0.7); --card-radius: 14px; --max-width: 980px; --glass-border: rgba(255,255,255,0.08); }
+/* Reset minimal */
+* { box-sizing: border-box; margin: 0; padding: 0 }
+html, body { height: 100% }
 
-/* Reset minimal */ *{box-sizing:border-box;margin:0;padding:0} html,body{height:100%}
+body {
+  font-family: "Noto Sans Arabic", "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 60%);
+  color: var(--text);
+  min-height: 100vh;
+  direction: rtl;
+}
 
-body{ font-family: "Noto Sans Arabic", "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(160deg,var(--bg-1) 0%, var(--bg-2) 60%); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; direction:rtl; line-height:1.6; padding:40px 20px; }
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-.wrap{ max-width:var(--max-width); margin:0 auto; display:flex; flex-direction:column; gap:20px; }
+/* بطاقة زجاجية */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--card-radius);
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(3,6,30,0.10);
+}
 
-/* Common glass card */ .card{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--card-radius); padding:20px; box-shadow: 0 6px 20px rgba(3,6,10,0.5); border: 1px solid var(--glass-border); backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); }
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.02));
+}
 
-.glass{ background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.02)); }
+/* عنوان */
+.glass-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 26px 22px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 
-/* Header */ .glass-header{ display:flex; flex-direction:column; gap:8px; padding:26px 22px; text-align:center; position:relative; overflow:hidden; }
+.glass-header h1 {
+  font-size: clamp(20px,3.5vw,30px);
+  color: var(--text);
+  text-shadow: 0 2px 20px rgba(2,6,12,0.65);
+  letter-spacing: 0.6px;
+}
 
-.glass-header::before{ content:''; position:absolute;inset:0;pointer-events:none; background: radial-gradient(600px 200px at 10% 10%, rgba(255,255,255,0.03), transparent 10%), radial-gradient(500px 200px at 90% 60%, rgba(255,215,102,0.04), transparent 10%); }
+.location {
+  color: var(--muted);
+  font-size: 14px;
+}
 
-.glass-header h1{ font-size:clamp(20px,3.5vw,30px); color:var(--text); text-shadow: 0 2px 20px rgba(2,6,12,0.65); letter-spacing:0.6px; }
+/* زر التسجيل */
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
 
-.location{ color:var(--muted); font-size:14px; }
+.register-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: var(--accent);
+  color: #222;
+  box-shadow: 0 8px 30px rgba(3,6,10,0.45);
+  border: 1px solid rgba(255,255,255,0.09);
+  transition: 0.2s;
+}
 
-/* Intro card special */ .intro{ display:flex; align-items:center; gap:18px; padding:18px; border-left:4px solid var(--accent); }
+.register-btn:hover, .register-btn:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(3,6,10,0.5);
+}
 
-.islamic-glow{ box-shadow: 0 8px 40px rgba(255,215,102,0.06), 0 2px 6px rgba(0,0,0,0.4); }
-
-/* Titles inside cards */ h2{ font-size:18px; margin-bottom:12px; color:var(--text); }
-
-ul{ list-style: none; display:flex; flex-direction:column; gap:10px; }
-
-ul li{ padding:8px 12px; border-radius:10px; background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02)); border: 1px solid rgba(255,255,255,0.02); }
-
-/* Make some important items bold/different */ .card strong{color:var(--accent);font-weight:700}
-
-.center-btn{ display:flex; justify-content:center; margin-top:14px; }
-
-.register-btn{ display:inline-block; text-decoration:none; padding:12px 22px; border-radius:999px; font-weight:700; box-shadow: 0 8px 30px rgba(3,6,10,0.45); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(255,215,102,0.12), var(--accent-soft)); color: #082029; /* dark on gold */ transition:transform .15s ease, box-shadow .15s ease; }
-
-.register-btn:hover,.register-btn:focus{ transform:translateY(-4px); box-shadow: 0 18px 36px rgba(3,6,10,0.5); }
-
-/* Note text */ .note{ margin-top:10px; color:rgba(234,246,255,0.75); font-size:13px; }
-
-/* Footer */ .glass-footer{ text-align:center; padding:18px; font-size:13px; color:rgba(234,246,255,0.7); border-radius:12px; }
-
-/* Responsive layout for larger screens */ @media(min-width:900px){ .wrap{padding:60px 20px} .card{padding:26px} .intro{padding:26px} .register-btn{padding:14px 28px} }
-
-/* Accessibility tweaks */ a.register-btn:focus{outline:3px solid rgba(255,215,102,0.18);outline-offset:4px}
-
-/* Small improvements: link icon, bullets / ul li::before{ content:'\2022'; / bullet / display:inline-block; width:1.2em; margin-left:6px; / because rtl */ color:var(--accent); font-weight:700; }
-
-/* Print-friendly fallback */ @media print{ body{background:white;color:black} .card{background:white;border:0;box-shadow:none} .register-btn{display:none} }
-
-/* Extra: subtle floating ornament on the right for visual identity */ .identity-ornament{ position:absolute;right:6px;top:6px;opacity:0.06;font-size:42px;pointer-events:none;user-select:none;color:#fff }
-
-/* Small RTL helper for embedded LTR text (links, times) */ .ltr{direction:ltr;text-align:left;unicode-bidi:embed}
-
-/* End of file */
-
+/* تحسينات أخرى يمكنك الإبقاء عليها من ملفك */
